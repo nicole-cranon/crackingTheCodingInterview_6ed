@@ -6,8 +6,6 @@ bool isUnique ( const std::string& source ) {
 
 	for ( unsigned i = 0; i < source.length(); ++i ) {
 		if ( containsString.find( source[i] ) != std::string::npos ) {
-			std::cout << " does not contain unique characters.\n";
-
 			return false;
 		} else {
 			containsString += source[i];
