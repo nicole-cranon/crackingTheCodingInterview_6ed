@@ -15,11 +15,22 @@ bool isUnique ( const std::string& source ) {
 	return true;
 }
 
-int main () {
-	std::string source = "some";
+int main (int argc, char* argv[]) {
+
+	if (argc != 2) {
+		std::cout << "Error: An input string must be provided.\n";
+		std::cout << "\t./isUnique <source string>\n";
+
+		return -1;
+	}
+
+	std::string source = "";
+	source += argv[1];
 
 	if ( isUnique( source ) ) {
 		std::cout << "the source string \"" << source << "\" contains unique characters.\n";
+	} else {
+		std::cout << "the source string \"" << source << "\" does not contain unique characters.\n";
 	}
 
 	return 0;
